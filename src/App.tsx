@@ -11,8 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      <Todos items={todos} />
       <NewTodo onAddTodo={AddTodoHandler} todos={todos} />
+      <Todos items={todos} />
     </div>
   );
 }
