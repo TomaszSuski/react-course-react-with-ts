@@ -5,14 +5,17 @@ import NewTodo from "./components/NewTodo";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const AddTodoHandler = (id: number, text: string) => {
+  const addTodoHandler = (id: number, text: string) => {
     setTodos((prevTodos) => [...prevTodos, { id, text }]);
+  };
+  const removeTodoHandler = (id: number) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   return (
     <div className="App">
-      <NewTodo onAddTodo={AddTodoHandler} todos={todos} />
-      <Todos items={todos} />
+      <NewTodo onAddTodo={addTodoHandler} todos={todos} />
+      <Todos items={todos} removeTodo={removeTodoHandler} />
     </div>
   );
 }

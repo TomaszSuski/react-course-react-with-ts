@@ -5,13 +5,14 @@ import classes from "./Todos.module.css";
 
 type TodosProps = {
   items: Todo[];
+  removeTodo: (id: number) => void;
 };
 
-export default function Todos({ items }: TodosProps) {
+export default function Todos({ items, removeTodo }: TodosProps) {
   return (
     <ul className={classes.todos}>
       {items.map((item) => (
-        <TodoItem todo={item} key={item.id} />
+        <TodoItem todo={item} key={item.id} removeTodo={removeTodo} />
       ))}
     </ul>
   );
