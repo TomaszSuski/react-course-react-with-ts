@@ -1,14 +1,10 @@
-import React from "react";
-import Todo from "../models/todo";
+import React, { useContext } from "react";
 import TodoItem from "./TodoItem";
 import classes from "./Todos.module.css";
+import TodosContext from "../store/todo-context";
 
-type TodosProps = {
-  items: Todo[];
-  removeTodo: (id: number) => void;
-};
-
-export default function Todos({ items, removeTodo }: TodosProps) {
+export default function Todos() {
+  const { items, removeTodo } = useContext(TodosContext);
   return (
     <ul className={classes.todos}>
       {items.map((item) => (
