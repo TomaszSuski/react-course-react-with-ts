@@ -1,6 +1,7 @@
 import React from "react";
 import Todo from "../models/todo";
 import TodoItem from "./TodoItem";
+import classes from "./Todos.module.css";
 
 type TodosProps = {
   items: Todo[];
@@ -8,7 +9,7 @@ type TodosProps = {
 
 export default function Todos({ items }: TodosProps) {
   return (
-    <ul>
+    <ul className={classes.todos}>
       {items.map((item) => (
         <TodoItem todo={item} key={item.id} />
       ))}

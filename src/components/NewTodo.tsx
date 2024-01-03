@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Todo from "../models/todo";
+import classes from "./NewTodo.module.css";
 
 const NewTodo: React.FC<{
   onAddTodo: (id: number, text: string) => void;
@@ -20,12 +21,12 @@ const NewTodo: React.FC<{
   };
 
   return (
-    <form onSubmit={todoSubmitHandler}>
+    <form onSubmit={todoSubmitHandler} className={classes.form}>
       <div>
-        <label htmlFor="todo-text">Todo Text</label>
+        <label htmlFor="todo-text" >Todo Text</label>
         <input type="text" id="todo-text" ref={textInputRef} />
       </div>
-      <button type="submit">ADD TODO</button>
+      <button type="submit" >ADD TODO</button>
     </form>
   );
 };
