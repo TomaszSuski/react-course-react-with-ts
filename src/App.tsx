@@ -5,10 +5,8 @@ import { TodosContextProvider } from "./store/todo-context";
 function App() {
   return (
     <TodosContextProvider>
-      <div className="App">
-        <NewTodo />
-        <Todos />
-      </div>
+      <NewTodo />
+      <Todos />
     </TodosContextProvider>
   );
 }
